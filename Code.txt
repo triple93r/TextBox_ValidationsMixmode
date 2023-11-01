@@ -4,6 +4,12 @@ document.getElementById("DateFD").addEventListener("focusout", ValidatePFDdetail
 document.getElementById("Account").addEventListener("focusout", ValidatePFDdetails);
 document.getElementById("Remarks").addEventListener("focusout", ValidatePFDdetails);
 
+    const dropdown = document.getElementById("BlockId");
+    dropdown.addEventListener("change", function (event) {
+        // do something...
+        alert('Changed DPDN!!')
+    });
+
 function ValidatePFDdetails() {
     debugger;
     var fdnum = document.getElementById('FD').value;
