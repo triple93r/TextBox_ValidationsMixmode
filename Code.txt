@@ -4,11 +4,14 @@ document.getElementById("DateFD").addEventListener("focusout", ValidatePFDdetail
 document.getElementById("Account").addEventListener("focusout", ValidatePFDdetails);
 document.getElementById("Remarks").addEventListener("focusout", ValidatePFDdetails);
 
-    const dropdown = document.getElementById("BlockId");
+    const dropdown1 = document.getElementById("BlockId");
     dropdown.addEventListener("change", function (event) {
         // do something...
         alert('Changed DPDN!!')
     });
+
+this is another way to see the selected index of dropdown named'dropdown1'
+var selectedValue = dropdown1.selectedIndex== 0 ? alert('r') : alert('2');
 
 function ValidatePFDdetails() {
     debugger;
