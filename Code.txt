@@ -1,0 +1,53 @@
+<script>
+document.getElementById("FD").addEventListener("focusout", ValidatePFDdetails);
+document.getElementById("DateFD").addEventListener("focusout", ValidatePFDdetails);
+document.getElementById("Account").addEventListener("focusout", ValidatePFDdetails);
+document.getElementById("Remarks").addEventListener("focusout", ValidatePFDdetails);
+
+function ValidatePFDdetails() {
+    debugger;
+    var fdnum = document.getElementById('FD').value;
+    var fddate = document.getElementById('DateFD').value;
+    var actnum = document.getElementById('Account').value;
+    var remark = document.getElementById('Remarks').value;
+
+    if (fdnum == "") {
+        $('#FD').next("label").remove();
+        $('#FD').after('<label class="error mt-2 text-danger">Please provide FD Number</label>');
+        $("#FD").focus();
+        count = 1;
+        return false;
+    } else {
+        $('#FD').next("label").remove();
+    }
+    if (actnum == "") {
+        $('#Account').next("label").remove();
+        $('#Account').after('<label class="error mt-2 text-danger">Please provide Account Number</label>');
+        $("#Account").focus();
+        count = 1;
+        return false;
+    } else {
+        $('#Account').next("label").remove();
+    }
+
+    if (fddate == "") {
+        $('#DateFD').next("label").remove();
+        $('#DateFD').after('<label class="error mt-2 text-danger">Please provide FD Date</label>');
+        $("#DateFD").focus();
+        count = 1;
+        return false;
+    } else {
+        $('#DateFD').next("label").remove();
+    }
+
+    if (remark == "") {
+        $('#Remarks').next("label").remove();
+        $('#Remarks').after('<label class="error mt-2 text-danger">Please provide Remarks</label>');
+        $("#Remarks").focus();
+        count = 1;
+        return false;
+    } else {
+        $('#Remarks').next("label").remove();
+    }
+}
+</script>
