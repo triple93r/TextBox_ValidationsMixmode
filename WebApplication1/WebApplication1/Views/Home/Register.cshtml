@@ -54,6 +54,17 @@
             $("#eName").focusout(function () {
                 ValidatePFDdetails();
             });
+            $("#Email").focusout(function () {
+                ValidatePFDdetails();
+            });
+            $("#EmployeeId").focusout(function () {
+                ValidatePFDdetails();
+            });
+            $("#Emptype").focusout(function () {
+                ValidatePFDdetails();
+            });
+
+
             function ValidatePFDdetails() {
                 ename = $('#eName').val();
                 eml = $('#Email').val();
@@ -70,7 +81,7 @@
                 } else {
                     $('#eName').next("label").remove();
                 }
-                if (ename == "") {
+                if (eml == "") {
                     $('#Email').next("label").remove();
                     $('#Email').after('<label class="error mt-2 text-danger">Please provide an email</label>');
                     $("#Email").focus();
@@ -79,7 +90,7 @@
                 } else {
                     $('#Email').next("label").remove();
                 }
-                if (ename == "") {
+                if (empid == "") {
                     $('#EmployeeId').next("label").remove();
                     $('#EmployeeId').after('<label class="error mt-2 text-danger">Please provide an employee ID</label>');
                     $("#EmployeeId").focus();
@@ -88,7 +99,7 @@
                 } else {
                     $('#EmployeeId').next("label").remove();
                 }
-                if (ename == "") {
+                if (emptype == "") {
                     $('#Emptype').next("label").remove();
                     $('#Emptype').after('<label class="error mt-2 text-danger">Please provide an employee Type</label>');
                     $("#Emptype").focus();
@@ -100,5 +111,5 @@
             }
         });
     </script>
-    
+
 }
