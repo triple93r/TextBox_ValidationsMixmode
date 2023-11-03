@@ -6,8 +6,6 @@
 }
 
 <h1>Register</h1>
-
-<h4>Employee</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -47,20 +45,21 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>
-        function ad() {
-            alert("llll");
-        }
 
         $(document).ready(function () {
             console.log("ready!");
             debugger;
-            var ename = $('#eName').val();
-            $('#eName').focusout(function () {
-                debugger
+            var ename;
+
+            $("#eName").focusout(function () {
                 ValidatePFDdetails();
             });
             function ValidatePFDdetails() {
-                //ename = $('#eName').val();
+                ename = $('#eName').val();
+                eml = $('#Email').val();
+                empid = $('#EmployeeId').val();
+                emptype = $('#Emptype').val();
+
                 if (ename == "") 
                 {
                     $('#eName').next("label").remove();
@@ -70,6 +69,33 @@
                     return false;
                 } else {
                     $('#eName').next("label").remove();
+                }
+                if (ename == "") {
+                    $('#Email').next("label").remove();
+                    $('#Email').after('<label class="error mt-2 text-danger">Please provide an email</label>');
+                    $("#Email").focus();
+                    count = 1;
+                    return false;
+                } else {
+                    $('#Email').next("label").remove();
+                }
+                if (ename == "") {
+                    $('#EmployeeId').next("label").remove();
+                    $('#EmployeeId').after('<label class="error mt-2 text-danger">Please provide an employee ID</label>');
+                    $("#EmployeeId").focus();
+                    count = 1;
+                    return false;
+                } else {
+                    $('#EmployeeId').next("label").remove();
+                }
+                if (ename == "") {
+                    $('#Emptype').next("label").remove();
+                    $('#Emptype').after('<label class="error mt-2 text-danger">Please provide an employee Type</label>');
+                    $("#Emptype").focus();
+                    count = 1;
+                    return false;
+                } else {
+                    $('#Emptype').next("label").remove();
                 }
             }
         });

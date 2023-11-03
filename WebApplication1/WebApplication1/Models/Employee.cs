@@ -6,7 +6,7 @@ namespace WebApplication1.Models
     {
         [Key]
         public int Id { get; set; }
-        public string eName { get; set; }
+        public string? eName { get; set; } = string.Empty;
         public string Email { get; set; }
         public int EmployeeId { get; set; } = 0;
 
